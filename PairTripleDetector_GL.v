@@ -17,6 +17,18 @@ module PairTripleDetector_GL
   // Implement pair/triple detector using explicit gate-level modeling
   //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
+wire w;
+wire x;
+wire y;
+
+or(w, in1, in0);
+
+and(x, in1, in0);
+
+and(y, in2, w);
+
+or(out, y, x);
+
 endmodule
 
 `endif /* PAIR_TRIPLE_DETECTOR_GL_V */
